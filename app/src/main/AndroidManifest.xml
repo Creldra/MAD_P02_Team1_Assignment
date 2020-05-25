@@ -10,11 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ChapterMenu"
+        <activity android:name=".StoryPage"
             android:screenOrientation="sensorLandscape"
             tools:ignore="LockedOrientationActivity">
         </activity>
+        <activity
+            android:name=".ChapterMenu"
+            android:screenOrientation="sensorLandscape"
+            tools:ignore="LockedOrientationActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="sensorLandscape"
