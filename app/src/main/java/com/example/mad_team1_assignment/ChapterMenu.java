@@ -18,7 +18,6 @@ public class ChapterMenu extends AppCompatActivity {
         chapterOne = findViewById(R.id.chapterOneButton);
         backButton = findViewById(R.id.backButton);
 
-
         chapterOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,21 +1,23 @@
 package com.example.mad_team1_assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
     Button startButton;
     Button optionButton;
     Button exitButton;
-
+    Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         startButton = findViewById(R.id.startbutton);
         optionButton = findViewById(R.id.optionbutton);
         exitButton = findViewById(R.id.exitbutton);
+
+        fragment = new HideNavFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.hide_nav_fragment, fragment).commit();
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
