@@ -10,13 +10,27 @@ import android.widget.Button;
 public class ChapterMenu extends AppCompatActivity {
     Button chapterOne;
     Button backButton;
+    private View decorView;
+    int hsUI = new HideSystemUI().hideSystemUI(decorView);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter_menu);
+
         chapterOne = findViewById(R.id.chapterOneButton);
         backButton = findViewById(R.id.backButton);
+
+        //To set the System UI Visibility
+        decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+            @Override
+            public void onSystemUiVisibilityChange(int visibility) {
+                if(visibility == 0){
+                    decorView.setSystemUiVisibility(hsUI);
+                }
+            }
+        });
 
         chapterOne.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +39,7 @@ public class ChapterMenu extends AppCompatActivity {
              startActivity(chapterOne);
             }
         });
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,4 +48,11 @@ public class ChapterMenu extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hsUI);
+        }
+    }
 }
