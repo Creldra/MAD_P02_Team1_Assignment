@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.v(TAG, "Option Button Clicked");
+                Intent goOptionPage = new Intent(MainActivity.this, OptionPage.class);
+                startActivity(goOptionPage);
             }
         });
 
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        finish();
+        //finish();
     }
 
     @Override
