@@ -43,7 +43,8 @@ public class ChapterMenu extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent back = new Intent(ChapterMenu.this,MainActivity.class);
+                startActivity(back);
             }
         });
     }
