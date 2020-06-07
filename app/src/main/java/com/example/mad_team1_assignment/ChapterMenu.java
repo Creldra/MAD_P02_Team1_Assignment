@@ -56,4 +56,10 @@ public class ChapterMenu extends AppCompatActivity {
             decorView.setSystemUiVisibility(hsUI);
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
 }

@@ -51,11 +51,11 @@
         android:id="@+id/NextButton"
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="244dp"
         android:background="#808080"
         android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,11 +63,11 @@
         android:id="@+id/Menubutton"
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="364dp"
         android:background="#808080"
         android:text="Menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

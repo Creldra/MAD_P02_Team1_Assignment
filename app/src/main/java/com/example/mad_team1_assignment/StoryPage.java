@@ -75,14 +75,17 @@ public class StoryPage extends AppCompatActivity {
         });
     }
 
-
-
-
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus){
             decorView.setSystemUiVisibility(hsUI);
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }
