@@ -1,6 +1,7 @@
 package com.example.mad_team1_assignment;
 //SQLite DB
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,10 +25,16 @@ public class MyDBHandler extends SQLiteOpenHelper{
         String CREATE_STORY_TABLE = "CREATE TABLE " + TABLE_STORYTEXT + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TEXT  + " TEXT )";
         db.execSQL(CREATE_STORY_TABLE);
     }
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-    {
+    public void addText(StorySQLite story){
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TEXT, story.getStoryText());
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.insert(TABLE_STORYTEXT,null,values);
+        db.close();
     }
+
+
 
 }
 
