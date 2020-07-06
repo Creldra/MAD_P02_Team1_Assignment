@@ -73,7 +73,7 @@ public class ChapterMenu extends AppCompatActivity {
     protected void onStop() {
 
         // pausing the player in case of exiting from the app
-        if (MainActivity.defaultBgm.isPlaying() && !(MainActivity.sActive || OptionPage.sActive)) {
+        if (MainActivity.defaultBgm.isPlaying() && !(MainActivity.sActive || OptionPage.sActive || StoryPage.sActive)) {
             MainActivity.defaultBgm.pause();
         }
         super.onStop();

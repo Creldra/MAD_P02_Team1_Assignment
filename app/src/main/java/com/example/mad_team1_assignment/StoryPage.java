@@ -69,6 +69,8 @@ public class StoryPage extends AppCompatActivity {
             public void onClick(View v) {
                 lineNumber += 1;
 
+                MainActivity.performHaptic(v);
+                buttonSound.start();
                 /*
                 Tried using the If-Else statement to catch the return of Null but can't seem to work
                 So by using Try and Catch in this case is better
@@ -77,8 +79,7 @@ public class StoryPage extends AppCompatActivity {
                     StorySQLite textData = dbHandler.getStory(lineNumber);
                     dialogueText.setText(textData.getStoryText());
                     Log.v(TAG,"getting & setting line" + lineNumber + ": " + textData.getStoryText());
-                    buttonSound.start();
-                    MainActivity.performHaptic(v);
+
                 }catch (Exception e){
                     dialogueText.setText("End of Story");
                     Log.v(TAG, "The Story has ended");
@@ -134,7 +135,7 @@ public class StoryPage extends AppCompatActivity {
     @Override
     protected void onStop() {
         // pausing the player in case of exiting from the app
-        if (MainActivity.defaultBgm.isPlaying() && !(MainActivity.sActive || ChapterMenu.sActive)) {
+        if (MainActivity.defaultBgm.isPlaying() && !(MainActivity.sActive || ChapterMenu.sActive || OptionPage.sActive)) {
             MainActivity.defaultBgm.pause();
         }
         super.onStop();

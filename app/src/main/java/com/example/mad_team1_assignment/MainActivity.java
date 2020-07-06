@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         if (defaultBgm.isPlaying()
-                && !(OptionPage.sActive || ChapterMenu.sActive)) {
+                && !(OptionPage.sActive || ChapterMenu.sActive || StoryPage.sActive)) {
             defaultBgm.pause();
         }
         super.onStop();

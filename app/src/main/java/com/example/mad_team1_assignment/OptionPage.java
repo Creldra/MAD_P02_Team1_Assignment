@@ -124,7 +124,7 @@ public class OptionPage extends AppCompatActivity {
     protected void onStop() {
 
         // pausing the player in case of exiting from the app
-        if (MainActivity.defaultBgm.isPlaying() && !(MainActivity.sActive || ChapterMenu.sActive)) {
+        if (MainActivity.defaultBgm.isPlaying() && !(MainActivity.sActive || ChapterMenu.sActive || StoryPage.sActive)) {
             MainActivity.defaultBgm.pause();
         }
 
