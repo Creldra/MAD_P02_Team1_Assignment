@@ -14,19 +14,23 @@
             android:name=".OptionPage"
             android:screenOrientation="sensorLandscape"
             tools:ignore="LockedOrientationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             ></activity>
         <activity
             android:name=".StoryPage"
             android:screenOrientation="sensorLandscape"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="LockedOrientationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
             android:name=".ChapterMenu"
             android:screenOrientation="sensorLandscape"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="LockedOrientationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="sensorLandscape"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,5 +38,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

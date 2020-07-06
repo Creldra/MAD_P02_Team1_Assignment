@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OptionPage"
-    android:background="@drawable/bg_forest">
+    android:background="@drawable/bg_forest"
+    tools:context=".OptionPage">
 
     <TextView
         android:id="@+id/backgroundSetter"
@@ -22,44 +22,77 @@
         android:id="@+id/opt_back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"
         android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/masterVolume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="144dp"
-        android:text="Master Volume: "
-        android:textColor="#C7FF00"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/backgroundSetter" />
 
     <TextView
         android:id="@+id/bgmVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="184dp"
-        android:text="BGM Volume: "
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="30dp"
+        android:text="BGM Volume:"
         android:textColor="#C7FF00"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/backgroundSetter"
+        app:layout_constraintTop_toTopOf="@+id/backgroundSetter" />
 
     <TextView
         android:id="@+id/sfxVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="30dp"
         android:text="SFX Volume: "
         android:textColor="#C7FF00"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/backgroundSetter"
+        app:layout_constraintTop_toBottomOf="@+id/bgmVolume" />
+
+    <TextView
+        android:id="@+id/hapticFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Haptic Feedback:"
+        android:textColor="#C7FF00"
+        app:layout_constraintStart_toStartOf="@+id/backgroundSetter"
+        app:layout_constraintTop_toBottomOf="@+id/sfxVolume" />
+
+    <SeekBar
+        android:id="@+id/sbBGM"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:hapticFeedbackEnabled="true"
+        android:max="4"
+        android:progress="3"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundSetter"
+        app:layout_constraintTop_toTopOf="@+id/backgroundSetter" />
+
+    <SeekBar
+        android:id="@+id/sbSFX"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:hapticFeedbackEnabled="true"
+        android:max="4"
+        android:progress="3"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundSetter"
+        app:layout_constraintTop_toBottomOf="@+id/sbBGM" />
+
+    <Switch
+        android:id="@+id/switchHaptic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="128dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundSetter"
+        app:layout_constraintTop_toBottomOf="@+id/sbSFX" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

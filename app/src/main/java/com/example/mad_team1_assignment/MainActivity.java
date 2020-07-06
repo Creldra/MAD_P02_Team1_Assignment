@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
     Button optionButton;
     Button exitButton;
     private View decorView;
+
+    public MediaPlayer buttonSound;
+    public static boolean haptic = true;
+    public static MediaPlayer defaultBgm;
+    public static Float BGMVolume = 0.04f;
+    public static Float SFXVolume = 0.04f;
+    public static boolean sActive;
+
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
 
     @Override
@@ -26,11 +35,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        defaultBgm = playsoundtrack(R.raw.default_bgm);
+
         //Creation of the Objects
         startButton = findViewById(R.id.startbutton);
+        startButton.setHapticFeedbackEnabled(haptic);
+
         optionButton = findViewById(R.id.optionbutton);
+        optionButton.setHapticFeedbackEnabled(haptic);
+
         exitButton = findViewById(R.id.exitbutton);
-        final MediaPlayer buttonSound = MediaPlayer.create(this, R.raw.defaultbutton_sound);
+        exitButton.setHapticFeedbackEnabled(haptic);
+        buttonSound = MediaPlayer.create(this, R.raw.defaultbutton_sound);
+
+        buttonSound.setVolume(SFXVolume,SFXVolume);
 
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();
@@ -49,9 +68,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.v(TAG, "Start Button Clicked");
-                buttonSound.start();
-                Intent goChapterPage = new Intent(MainActivity.this, ChapterMenu.class);
-                startActivity(goChapterPage);
+                performHaptic(v);
+                redirectTo(ChapterMenu.class);
             }
         });
 
@@ -60,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.v(TAG, "Option Button Clicked");
-                buttonSound.start();
-                Intent goOptionPage = new Intent(MainActivity.this, OptionPage.class);
-                startActivity(goOptionPage);
+                performHaptic(v);
+                redirectTo(OptionPage.class);
+
             }
         });
 
@@ -70,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.performHaptic(v);
                 Log.v(TAG, "Exit Button Clicked");
                 buttonSound.start();
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -94,13 +113,32 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+        if (defaultBgm.isPlaying()
+                && !(OptionPage.sActive || ChapterMenu.sActive)) {
+            defaultBgm.pause();
+        }
         super.onStop();
         finish();
     }
 
     @Override
     protected void onResume() {
+        // starting the player if it is not playing
+        if (!defaultBgm.isPlaying()) {
+            defaultBgm.start();
+            defaultBgm.setLooping(true);
+        }
+
+        // true when activity is active
+        sActive = true;
+
         super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        sActive = false;
+        super.onPause();
     }
 
     /*
@@ -116,4 +154,31 @@ public class MainActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(hsUI);
         }
     }
+
+    private void redirectTo(Class final_dest){
+        Intent intent = new Intent(MainActivity.this, final_dest);
+        buttonSound.start();
+        startActivity(intent);
+    }
+
+    private MediaPlayer playsoundtrack(int soundtrack){
+
+        MediaPlayer defaultBgm = MediaPlayer.create(this, soundtrack);
+        defaultBgm.setVolume(BGMVolume,BGMVolume);
+        defaultBgm.setLooping(true);
+        defaultBgm.start();
+
+
+        return defaultBgm;
+    }
+
+    public static void performHaptic(View view){
+        if (haptic == true){
+            view.performHapticFeedback(
+                    HapticFeedbackConstants.VIRTUAL_KEY,
+                    HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING
+            );
+        }
+    }
+
 }
