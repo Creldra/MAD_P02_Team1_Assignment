@@ -23,6 +23,7 @@ public class ChapterMenu extends AppCompatActivity {
 
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(hsUI);
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
             public void onSystemUiVisibilityChange(int visibility) {
@@ -47,14 +48,6 @@ public class ChapterMenu extends AppCompatActivity {
                 startActivity(back);
             }
         });
-    }
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus){
-            decorView.setSystemUiVisibility(hsUI);
-        }
     }
 
     @Override

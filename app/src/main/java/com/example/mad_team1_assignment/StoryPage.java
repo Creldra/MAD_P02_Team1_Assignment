@@ -2,21 +2,15 @@ package com.example.mad_team1_assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.view.View;
 import android.content.Intent;
 import android.util.Log;
-import android.view.View.OnClickListener;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 
 public class StoryPage extends AppCompatActivity {
@@ -39,8 +33,8 @@ public class StoryPage extends AppCompatActivity {
 
         NextButton = findViewById(R.id.NextButton);
         MenuButton = findViewById(R.id.Menubutton);
-        M_Character = findViewById(R.id.M_Character);
-        S_Character = findViewById(R.id.S_Character);
+        M_Character = findViewById(R.id.m_Character);
+        S_Character = findViewById(R.id.s_Character);
         dialogueText = findViewById(R.id.Dialogue);
 
         //getting the storyline out
@@ -66,6 +60,7 @@ public class StoryPage extends AppCompatActivity {
                     Log.v(TAG,"getting & setting line" + lineNumber + ": " + textData.getStoryText());
                 }catch (Exception e){
                     dialogueText.setText("End of Story");
+                    //TODO: after the end of story, use intent and bring to gameplay page.
                     Log.v(TAG, "The Story has ended");
                 }
             }
@@ -97,6 +92,7 @@ public class StoryPage extends AppCompatActivity {
 
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(hsUI);
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
             public void onSystemUiVisibilityChange(int visibility) {
@@ -105,15 +101,6 @@ public class StoryPage extends AppCompatActivity {
                 }
             }
         });
-    }
-
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus){
-            decorView.setSystemUiVisibility(hsUI);
-        }
     }
 
     @Override

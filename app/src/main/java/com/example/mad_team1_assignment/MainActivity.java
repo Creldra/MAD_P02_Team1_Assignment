@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(hsUI);
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
             public void onSystemUiVisibilityChange(int visibility) {
@@ -108,12 +109,5 @@ public class MainActivity extends AppCompatActivity {
     This will only allow the System UI to appear only when the user tap and swipe from the top or right hand side of the screen
     But after awhile, the System UI would automatically hide itself back through the method onWindowFocusChanged()
      */
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus){
-            Log.v(TAG, "Changing Window Focus");
-            decorView.setSystemUiVisibility(hsUI);
-        }
-    }
+
 }

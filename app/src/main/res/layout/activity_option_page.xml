@@ -9,12 +9,13 @@
 
     <TextView
         android:id="@+id/backgroundSetter"
-        android:layout_width="403dp"
-        android:layout_height="184dp"
+        android:layout_width="597dp"
+        android:layout_height="315dp"
         android:background="#70000000"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,10 +34,11 @@
         android:id="@+id/masterVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="84dp"
         android:text="Master Volume: "
         android:textColor="#C7FF00"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,10 +46,11 @@
         android:id="@+id/bgmVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="144dp"
         android:text="BGM Volume: "
         android:textColor="#C7FF00"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,10 +58,11 @@
         android:id="@+id/sfxVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="172dp"
         android:text="SFX Volume: "
         android:textColor="#C7FF00"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

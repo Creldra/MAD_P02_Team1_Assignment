@@ -9,20 +9,20 @@
 
 
     <ImageView
-        android:id="@+id/M_Character"
-        android:layout_width="100dp"
-        android:layout_height="140dp"
+        android:id="@+id/m_Character"
+        android:layout_width="172dp"
+        android:layout_height="200dp"
         android:contentDescription="placeholderimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906"
-        app:srcCompat="@drawable/bg_forest" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mc_1" />
 
     <ImageView
-        android:id="@+id/S_Character"
+        android:id="@+id/s_Character"
         android:layout_width="100dp"
         android:layout_height="130dp"
         android:contentDescription="placeholderimage"
@@ -36,40 +36,40 @@
 
     <TextView
         android:id="@+id/Dialogue"
-        android:layout_width="500dp"
-        android:layout_height="150dp"
+        android:layout_width="570dp"
+        android:layout_height="149dp"
         android:background="#79FFFFFF"
         android:text="insert_dialogue_here"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.938" />
 
     <Button
         android:id="@+id/NextButton"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
         android:layout_marginTop="244dp"
         android:background="#808080"
         android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Menubutton"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="364dp"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="344dp"
         android:background="#808080"
         android:text="Menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
