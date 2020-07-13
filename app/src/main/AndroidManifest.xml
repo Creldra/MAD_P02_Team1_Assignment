@@ -11,10 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ChapterOneGame"
+            android:screenOrientation="sensorLandscape"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".OptionPage"
             android:screenOrientation="sensorLandscape"
-            tools:ignore="LockedOrientationActivity"
-            ></activity>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".StoryPage"
             android:screenOrientation="sensorLandscape"

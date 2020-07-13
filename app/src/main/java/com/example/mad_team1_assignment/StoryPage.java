@@ -59,9 +59,10 @@ public class StoryPage extends AppCompatActivity {
                     dialogueText.setText(textData.getStoryText());
                     Log.v(TAG,"getting & setting line" + lineNumber + ": " + textData.getStoryText());
                 }catch (Exception e){
-                    dialogueText.setText("End of Story");
-                    //TODO: after the end of story, use intent and bring to gameplay page.
                     Log.v(TAG, "The Story has ended");
+                    Log.v(TAG, "Moving to Game Stage");
+                    Intent intent = new Intent(StoryPage.this, ChapterOneGame.class);
+                    startActivity(intent);
                 }
             }
         });

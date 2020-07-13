@@ -24,10 +24,11 @@ public class ChapterOneStoryline {
         listOfText.add("Mary: Hi, my name is Mary, nice to meet you.");
         listOfText.add("*Norah starts to explain Mary's situation to Max*");
         listOfText.add("Max: I see, but to get out of the forest, first let me teach you about the animals in the forest.");
-        listOfText.add("Max: So that you would not be in danger.");
         listOfText.add("Norah: Alright!");
-        listOfText.add("Max: ");
-        listOfText.add("######");
+        //elephant information
+        listOfText.add("Max: First is the Elephant, elephants are the world's largest land animal! It can reach 3 meters tall and weight between 3,000 to 7,500kg");
+        listOfText.add("Max: Elephants are herbivores which means they eat leaves, twigs, fruits and even roots.");
+        listOfText.add("");
 
         for (int i = 0; i < listOfText.size(); i++){
             String dbText = listOfText.get(i);
