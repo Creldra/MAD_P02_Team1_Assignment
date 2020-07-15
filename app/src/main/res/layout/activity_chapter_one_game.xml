@@ -7,41 +7,35 @@
     android:background="@drawable/bg_forest"
     tools:context=".ChapterOneGame">
 
-    <CheckBox
-        android:id="@+id/chkbox_AnsFour"
-        android:layout_width="152dp"
-        android:layout_height="39dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="104dp"
-        android:background="#FDFDFD"
-        android:textAlignment="viewStart"
+    <Button
+        android:id="@+id/opt_4"
+        android:layout_width="244dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="36dp"
+        android:text="option_4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:text="ans_4" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <CheckBox
-        android:id="@+id/chkbox_AnsThree"
-        android:layout_width="152dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginBottom="104dp"
-        android:background="#FDFDFD"
-        android:textAlignment="viewStart"
+    <Button
+        android:id="@+id/opt_3"
+        android:layout_width="244dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="36dp"
+        android:text="option_3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="ans_3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <CheckBox
-        android:id="@+id/chkbox_AnsTwo"
-        android:layout_width="152dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="180dp"
-        android:background="#FDFDFD"
-        android:textAlignment="viewStart"
+    <Button
+        android:id="@+id/opt_2"
+        android:layout_width="244dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="104dp"
+        android:text="option_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="ans_2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/questionText"
@@ -56,17 +50,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="CONFIRM"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/btn_pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,16 +57,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/chkbox_AnsOne"
-        android:layout_width="152dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="200dp"
-        android:background="#FDFDFD"
-        android:textAlignment="viewStart"
+    <Button
+        android:id="@+id/opt_1"
+        android:layout_width="244dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="204dp"
+        android:text="option_1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="ans_1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

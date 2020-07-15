@@ -15,10 +15,16 @@ import android.widget.TextView;
 public class ChapterOneGame extends AppCompatActivity {
 
     private final String TAG = "ChapterOneGame: ";
+    private static final int[] opt_IDS = { R.id.opt_1, R.id.opt_2, R.id.opt_3, R.id.opt_4 };
+    private static final String[] question1 = { "" };
+    private static final String[] question2 = { "" };
+    private static final String[] question3 = { "" };
+    private static final String[] question4 = { "" };
+    private static final String[] question5 = { "" };
+    private static final String[] question6 = { "" };
+    private Button options;
     Button btn_Pause;
-    Button btn_Confirm;
     TextView txt_Question;
-    CheckBox chkbox_AnsOne, chkbox_AnsTwo, chkbox_AnsThree, chkbox_AnsFour;
     private View decorView;
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
 
@@ -29,7 +35,6 @@ public class ChapterOneGame extends AppCompatActivity {
 
         //Creation of Objects
         btn_Pause = findViewById(R.id.btn_pause);
-        btn_Confirm = findViewById(R.id.btn_submit);
         txt_Question = findViewById(R.id.questionText);
 
         //To set the System UI Visibility
@@ -45,13 +50,19 @@ public class ChapterOneGame extends AppCompatActivity {
             }
         });
 
-        //Confirm Button
-        btn_Confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        //TODO: create the first text of questions and options
+        Button temp_opt1 = findViewById(opt_IDS[0]);
+        temp_opt1.setText(question1[0]);
 
-            }
-        });
+        for(final int optionID : opt_IDS){
+            options = findViewById(optionID);
+            options.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //TODO: create a loop when clicked to change the text in the buttons
+                }
+            });
+        }
 
         //Pause Button
         btn_Pause.setOnClickListener(new View.OnClickListener() {

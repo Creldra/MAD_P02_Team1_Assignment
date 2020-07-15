@@ -103,11 +103,4 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
     }
-
-    /*
-    On windows focus changed, the System UI visibility will be changed accordingly
-    This will only allow the System UI to appear only when the user tap and swipe from the top or right hand side of the screen
-    But after awhile, the System UI would automatically hide itself back through the method onWindowFocusChanged()
-     */
-
 }

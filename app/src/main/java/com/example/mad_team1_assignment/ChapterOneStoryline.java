@@ -13,6 +13,7 @@ public class ChapterOneStoryline {
 
     public void AddingStory(Context context){
         MyDBHandler dbHandler = new MyDBHandler(context,null,null,1);
+        //Mary - MC, Norah - Fox, Max - Monkey
         listOfText.add("Mary: Where am I? I think I lost my way...");
         listOfText.add("Mary: Is that a Fox over there?");
         listOfText.add("???: Who are you?");
@@ -25,10 +26,24 @@ public class ChapterOneStoryline {
         listOfText.add("*Norah starts to explain Mary's situation to Max*");
         listOfText.add("Max: I see, but to get out of the forest, first let me teach you about the animals in the forest.");
         listOfText.add("Norah: Alright!");
-        //elephant information
-        listOfText.add("Max: First is the Elephant, elephants are the world's largest land animal! It can reach 3 meters tall and weight between 3,000 to 7,500kg");
-        listOfText.add("Max: Elephants are herbivores which means they eat leaves, twigs, fruits and even roots.");
-        listOfText.add("");
+        //Elephant information (Herbivore)
+        listOfText.add("Max: Elephants, they are the world's largest land animal! Elephants are known for their large ears, tusks made of ivory and their long trunks.");
+        listOfText.add("Max: Elephants are Herbivore which means they eat leaves, twigs, fruits and even roots.");
+        //Deer information (Herbivore)
+        listOfText.add("Max: Deers have long and powerful legs, a small tail and long ears. Deers are also excellent jumpers and swimmers.");
+        listOfText.add("Max: Deers is also Herbivore, they eat grass, tree leaves and fruits.");
+        //Jaguar information (Carnivore)
+        listOfText.add("Max: Jaguars are the largest of South America’s big cats and the third largest cats in the world.");
+        listOfText.add("Max: Jaguars is a Carnivore which means they eat meat and fish.");
+        //Tiger information (Carnivore)
+        listOfText.add("Max: Tigers are powerful hunter with sharp teeth, strong jaws, and a very agile body.");
+        listOfText.add("Max: Tigers is also a Carnivore, they eat meat and fish too.");
+        //Fox information (Omnivore)
+        listOfText.add("Max: Foxes have narrow faces, long bushy tail and large, triangular ears, fox are known to have excellent hearing.");
+        listOfText.add("Max: Foxes are Omnivore, which means they eat meat and plants, but fox only hunt for rabbit and eat berries and fruits.");
+        //Bear information (Omnivore)
+        listOfText.add("Max: Bears have huge paws, a furry body, a snout and weigh hundreds of kilograms.");
+        listOfText.add("Max: Bears is also an Omnivore, they eat meat and plants and some bears also like honey.");
 
         for (int i = 0; i < listOfText.size(); i++){
             String dbText = listOfText.get(i);
