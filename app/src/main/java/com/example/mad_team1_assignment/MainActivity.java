@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button startButton;
     Button optionButton;
     Button exitButton;
+    Button achievementButton;
     private View decorView;
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         startButton = findViewById(R.id.startbutton);
         optionButton = findViewById(R.id.optionbutton);
         exitButton = findViewById(R.id.exitbutton);
+        achievementButton = findViewById(R.id.achievementButton);
         final MediaPlayer buttonSound = MediaPlayer.create(this, R.raw.defaultbutton_sound);
 
         //To set the System UI Visibility
@@ -66,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goOptionPage);
             }
         });
+
+        //Achievements Button
+        achievementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "Achievement Button Clicked");
+                buttonSound.start();
+                Intent goAchievementPage = new Intent(MainActivity.this, AchievementsPage.class);
+                startActivity(goAchievementPage);
+            }
+        });
+
 
         //Exit Game Button
         exitButton.setOnClickListener(new View.OnClickListener() {
