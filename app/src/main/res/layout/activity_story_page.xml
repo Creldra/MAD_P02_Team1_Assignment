@@ -8,6 +8,16 @@
     android:background="@drawable/bg_forest">
 
 
+    <TextView
+        android:id="@+id/txt_DialogBG"
+        android:layout_width="570dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#79FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
         android:id="@+id/m_Character"
         android:layout_width="172dp"
@@ -36,15 +46,14 @@
 
     <TextView
         android:id="@+id/Dialogue"
-        android:layout_width="570dp"
-        android:layout_height="149dp"
-        android:background="#79FFFFFF"
+        android:layout_width="450dp"
+        android:layout_height="150dp"
         android:text="insert_dialogue_here"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.938" />
@@ -72,6 +81,7 @@
         app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
