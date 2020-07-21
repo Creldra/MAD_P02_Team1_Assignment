@@ -46,6 +46,7 @@ public class StoryPage extends AppCompatActivity {
         final StorySQLite textData = dbHandler.getStory(lineNumber);
         dialogueText.setText(textData.getStoryText());
 
+        //Next Button
         NextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +58,7 @@ public class StoryPage extends AppCompatActivity {
                 try {
                     StorySQLite textData = dbHandler.getStory(lineNumber);
                     dialogueText.setText(textData.getStoryText());
+                    changeCharacter(lineNumber);
                     Log.v(TAG,"getting & setting line" + lineNumber + ": " + textData.getStoryText());
                 }catch (Exception e){
                     Log.v(TAG, "The Story has ended");
@@ -102,6 +104,33 @@ public class StoryPage extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void changeCharacter(int lineNumber){
+        if(lineNumber == 2){
+            S_Character.setImageResource(R.drawable.fox);
+        }
+        else if (lineNumber == 5){
+            S_Character.setImageResource(R.drawable.monkey);
+        }
+        else if (lineNumber == 12){
+            S_Character.setImageResource(R.drawable.elephant);
+        }
+        else if (lineNumber == 14){
+            S_Character.setImageResource(R.drawable.deer);
+        }
+        else if (lineNumber == 16){
+            S_Character.setImageResource(R.drawable.jaguar);
+        }
+        else if (lineNumber == 18){
+            S_Character.setImageResource(R.drawable.tiger);
+        }
+        else if (lineNumber == 20){
+            S_Character.setImageResource(R.drawable.fox);
+        }
+        else if (lineNumber == 22){
+            S_Character.setImageResource(R.drawable.bear);
+        }
     }
 
     @Override

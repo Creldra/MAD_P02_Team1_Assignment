@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AchievementsPage"></activity>
+        <activity android:name=".AchievementsPage"
+            android:screenOrientation="sensorLandscape"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".EndGamePage"
             android:screenOrientation="sensorLandscape"

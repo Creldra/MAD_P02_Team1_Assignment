@@ -33,16 +33,15 @@
 
     <ImageView
         android:id="@+id/s_Character"
-        android:layout_width="100dp"
-        android:layout_height="130dp"
+        android:layout_width="194dp"
+        android:layout_height="215dp"
         android:contentDescription="placeholderimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12"
-        app:srcCompat="@drawable/bg_forest" />
+        app:layout_constraintVertical_bias="0.153" />
 
     <TextView
         android:id="@+id/Dialogue"
