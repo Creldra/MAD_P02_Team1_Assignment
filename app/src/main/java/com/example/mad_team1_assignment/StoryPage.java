@@ -2,6 +2,8 @@ package com.example.mad_team1_assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -38,9 +40,14 @@ public class StoryPage extends AppCompatActivity {
         dialogueText = findViewById(R.id.Dialogue);
 
         //getting the storyline out
-        Log.v(TAG, "Adding Chapter 1 Story to Database");
-        ChapterOneStoryline storyline = new ChapterOneStoryline();
-        storyline.AddingStory(StoryPage.this);
+        if(checkDataBase() == false){
+            Log.v(TAG, "Adding Chapter 1 Story to Database");
+            ChapterOneStoryline storyline = new ChapterOneStoryline();
+            storyline.AddingStory(StoryPage.this);
+        }
+        else if(checkDataBase() == true){
+            Log.v(TAG, "Chapter 1 Story Database Already Exist!");
+        }
 
         //To show the first line of text at the beginning
         final StorySQLite textData = dbHandler.getStory(lineNumber);
@@ -104,6 +111,19 @@ public class StoryPage extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean checkDataBase() {
+        SQLiteDatabase checkDB = null;
+        try {
+            checkDB = SQLiteDatabase.openDatabase("/data/data/mad.team1.assignment/databases/story.db", null,
+                    SQLiteDatabase.OPEN_READONLY);
+            checkDB.close();
+        } catch (SQLiteException e) {
+            // database doesn't exist yet.
+            return false;
+        }
+        return checkDB != null;
     }
 
     private void changeCharacter(int lineNumber){
