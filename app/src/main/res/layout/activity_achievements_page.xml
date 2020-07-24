@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AchievementsPage"
-    android:background="@drawable/bg_forest">
-
+    android:background="@drawable/bg_forest"
+    tools:context=".AchievementsPage">
 
 
     <Button
@@ -22,15 +21,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
 
-    <TextView
-        android:id="@+id/achieve"
-        android:layout_width="371dp"
-        android:layout_height="97dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="136dp"
-        android:text=" Achievements displayed here "
-        android:textSize="24sp"
+
+    <ListView
+        android:id="@+id/awardList"
+        android:layout_width="699dp"
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/achievement_backButton"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

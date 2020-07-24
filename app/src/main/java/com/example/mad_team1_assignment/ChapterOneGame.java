@@ -31,6 +31,7 @@ public class ChapterOneGame extends AppCompatActivity {
     Button btn_Pause;
     TextView txt_Question;
     TextView txt_ReturnView;
+
     private View decorView;
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
     int score = 0;
@@ -44,6 +45,7 @@ public class ChapterOneGame extends AppCompatActivity {
         btn_Pause = findViewById(R.id.btn_pause);
         txt_Question = findViewById(R.id.questionText);
         txt_ReturnView = findViewById(R.id.txt_returnView);
+
 
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();
@@ -91,6 +93,13 @@ public class ChapterOneGame extends AppCompatActivity {
                     }
 
                     if(qns_setter[0] == 5){
+
+                        AlertDialog achievementDialog = new AlertDialog.Builder(ChapterOneGame.this)
+                                .setTitle("Congrats!")
+                                .setMessage("You have completed your first chapter")
+                                .setCancelable(true)
+                                .create();
+                        achievementDialog.show();
                         Intent intent = new Intent(ChapterOneGame.this, EndGamePage.class);
                         intent.putExtra("score", score);
                         startActivity(intent);
