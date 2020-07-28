@@ -11,6 +11,7 @@ public class OptionPage extends AppCompatActivity {
 
     private View decorView;
     private Button backButton;
+    private Button parentalButton;
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
 
     @Override
@@ -38,6 +39,22 @@ public class OptionPage extends AppCompatActivity {
                 startActivity(goMainMenu);
             }
         });
+
+        parentalButton = findViewById(R.id.parentalbutton);
+        parentalButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent goParental = new Intent(OptionPage.this,LoginPage.class);
+                startActivity(goParental);
+            }
+
+
+        });
+
+
+
+
+
     }
 
     @Override

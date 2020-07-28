@@ -3,6 +3,7 @@ package com.example.mad_team1_assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,14 @@ public class EndGamePage extends AppCompatActivity {
         txt_Score = findViewById(R.id.txt_Score);
         Intent receivingIntent = getIntent();
         int score = receivingIntent.getIntExtra("score", 0);
+
+        //saving latest score to shared preferences
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt("Score",score);
+        editor.apply();
+
+
 
         txt_Score.setText("You got " + score + "/6 Correct!");
 
