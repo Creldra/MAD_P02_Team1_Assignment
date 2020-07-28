@@ -28,9 +28,19 @@
         android:layout_height="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/achievement_backButton"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.464"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/backgroundSetter"
+            android:layout_width="597dp"
+            android:layout_height="315dp"
+            android:background="#70000000"
+            android:textColor="#000000" />
+    </ListView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

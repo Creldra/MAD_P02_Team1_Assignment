@@ -93,13 +93,9 @@ public class ChapterOneGame extends AppCompatActivity {
                     }
 
                     if(qns_setter[0] == 5){
+                        String Achievement = "First Chapter completed!";
+                        AchievementsPage.AchievementDialogBox(ChapterOneGame.this,Achievement);
 
-                        AlertDialog achievementDialog = new AlertDialog.Builder(ChapterOneGame.this)
-                                .setTitle("Congrats!")
-                                .setMessage("You have completed your first chapter")
-                                .setCancelable(true)
-                                .create();
-                        achievementDialog.show();
                         Intent intent = new Intent(ChapterOneGame.this, EndGamePage.class);
                         intent.putExtra("score", score);
                         startActivity(intent);

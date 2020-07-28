@@ -2,6 +2,9 @@ package com.example.mad_team1_assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,8 +24,19 @@ public class AchievementsPage extends AppCompatActivity {
     ListView awardList;
     ArrayAdapter ad;
 
-    List<String> awards = new ArrayList<String>();
-    String [] startingList ={"First Chapter completed"};
+    static List<String> awards = new ArrayList<String>();
+    static String [] startingList ={"Blank"};
+
+    public static void AchievementDialogBox(Context chapter, String Achievement){
+        awards.add(Achievement);
+        AlertDialog achievementDialog = new AlertDialog.Builder(chapter)
+                .setTitle("Congrats!")
+                .setMessage(Achievement)
+                .setCancelable(true)
+                .create();
+
+        achievementDialog.show();
+    }
 
 
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
