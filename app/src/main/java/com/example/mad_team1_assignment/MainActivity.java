@@ -13,7 +13,7 @@ import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    //Initialize Variables
     private final String TAG = "MainMenu: ";
     Button startButton;
     Button optionButton;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         optionButton = findViewById(R.id.optionbutton);
         exitButton = findViewById(R.id.exitbutton);
         achievementButton = findViewById(R.id.achievementButton);
-        final MediaPlayer buttonSound = MediaPlayer.create(this, R.raw.defaultbutton_sound);
+        final MediaPlayer buttonSound = MediaPlayer.create(this, R.raw.button_click);
 
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();

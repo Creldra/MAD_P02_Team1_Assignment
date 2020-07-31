@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,12 +17,12 @@ import android.widget.TextView;
 
 
 public class StoryPage extends AppCompatActivity {
+    //Initialize Variables
     private final String TAG = "StoryPage: ";
     Button NextButton;
     Button MenuButton;
     ImageView M_Character;
     ImageView S_Character;
-
     TextView dialogueText;
     private View decorView;
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
@@ -38,8 +39,9 @@ public class StoryPage extends AppCompatActivity {
         M_Character = findViewById(R.id.m_Character);
         S_Character = findViewById(R.id.s_Character);
         dialogueText = findViewById(R.id.Dialogue);
+        final MediaPlayer buttonSound = MediaPlayer.create(this, R.raw.button_click);
 
-        //getting the storyline out
+        //Checks Database Exist
         if(checkDataBase() == false){
             Log.v(TAG, "Adding Chapter 1 Story to Database");
             ChapterOneStoryline storyline = new ChapterOneStoryline();
@@ -80,6 +82,7 @@ public class StoryPage extends AppCompatActivity {
         MenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonSound.start();
                 AlertDialog.Builder builder = new AlertDialog.Builder(StoryPage.this);
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -113,11 +116,12 @@ public class StoryPage extends AppCompatActivity {
         });
     }
 
+    //Checks Database Exist Method
     private boolean checkDataBase() {
         SQLiteDatabase checkDB = null;
         try {
-            checkDB = SQLiteDatabase.openDatabase("/data/data/mad.team1.assignment/databases/story.db", null,
-                    SQLiteDatabase.OPEN_READONLY);
+            checkDB = SQLiteDatabase.openDatabase("/data/data/mad.team1.assignment/databases/story.db",
+                                                null, SQLiteDatabase.OPEN_READONLY);
             checkDB.close();
         } catch (SQLiteException e) {
             // database doesn't exist yet.
@@ -126,6 +130,7 @@ public class StoryPage extends AppCompatActivity {
         return checkDB != null;
     }
 
+    //Change Character Image Method
     private void changeCharacter(int lineNumber){
         if(lineNumber == 2){
             S_Character.setImageResource(R.drawable.fox);

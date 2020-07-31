@@ -10,8 +10,12 @@
         android:roundIcon="@mipmap/ic_mc_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewAccount"></activity>
-        <activity android:name=".LoginPage" />
+        <activity android:name=".NewAccount"
+            android:screenOrientation="sensorLandscape"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".LoginPage"
+            android:screenOrientation="sensorLandscape"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".AchievementsPage"
             android:screenOrientation="sensorLandscape"

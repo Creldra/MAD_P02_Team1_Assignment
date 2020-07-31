@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ChapterOneGame extends AppCompatActivity {
-
+    //Initialize Variables
     private static final int[] opt_IDS = { R.id.opt_1, R.id.opt_2, R.id.opt_3, R.id.opt_4 };
     private static final String[] question1 = { "Which Animal is a Herbivore?", "Deer", "Fox", "Bear", "Jaguar", "Deer" };
     private static final String[] question2 = { "Which Animal do not eat Meat?", "Tiger", "Bear", "Elephant", "Jaguar", "Elephant" };
@@ -44,6 +45,7 @@ public class ChapterOneGame extends AppCompatActivity {
         btn_Pause = findViewById(R.id.btn_pause);
         txt_Question = findViewById(R.id.questionText);
         txt_ReturnView = findViewById(R.id.txt_returnView);
+        final MediaPlayer buttonSound = MediaPlayer.create(this, R.raw.button_click);
 
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();
@@ -75,6 +77,7 @@ public class ChapterOneGame extends AppCompatActivity {
                     Button selectedButton = findViewById(optionID);
                     String checkText = selectedButton.getText().toString();
                     Log.v(TAG,checkText + " has been clicked!");
+                    //Check Selected Button Text equals Answer
                     if(checkText == questionList[qns_setter[0]][5]){
                         txt_ReturnView.setTextColor(Color.parseColor("#008000"));
                         txt_ReturnView.setText("Correct");
@@ -85,12 +88,14 @@ public class ChapterOneGame extends AppCompatActivity {
                         txt_ReturnView.setText("Wrong");
                     }
 
+                    //Setting Button unclickable after clicking a choice already
                     for (final int optionIDs : opt_IDS) {
                         selectedOptions = findViewById(optionIDs);
                         selectedOptions.setClickable(false);
                     }
 
-                    if(qns_setter[0] == 5){
+                    //Checks if last question
+                    if(qns_setter[0] == questionList.length - 1){
                         Intent intent = new Intent(ChapterOneGame.this, EndGamePage.class);
                         intent.putExtra("score", score);
                         startActivity(intent);
@@ -122,6 +127,7 @@ public class ChapterOneGame extends AppCompatActivity {
         btn_Pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonSound.start();
                 AlertDialog.Builder builder = new AlertDialog.Builder(ChapterOneGame.this);
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override

@@ -20,6 +20,8 @@ public class LoginPage extends AppCompatActivity {
     String password;
     String storedPassword;
     private static final String TAG = "Loginpage";
+    private View decorView;
+    int hsUI = new HideSystemUI().hideSystemUI(decorView);
 
 
     @Override
@@ -35,6 +37,18 @@ public class LoginPage extends AppCompatActivity {
         storedPassword=pref.getString("Password", null); // getting String
         Log.v(TAG,"Stored Password: "+storedPassword);
 
+        //To set the System UI Visibility
+        decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(hsUI);
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+            @Override
+            public void onSystemUiVisibilityChange(int visibility) {
+                if(visibility == 0){
+                    Log.v(TAG, "Hiding the System UI");
+                    decorView.setSystemUiVisibility(hsUI);
+                }
+            }
+        });
 
         final AlertDialog.Builder incorrectPWbuilder = new AlertDialog.Builder(this);
 
@@ -111,6 +125,14 @@ public class LoginPage extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

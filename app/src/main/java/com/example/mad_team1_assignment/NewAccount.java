@@ -16,6 +16,8 @@ Button backButton;
 Button createButton;
 String password;
     private static final String TAG = "NewAccPAge";
+    private View decorView;
+    int hsUI = new HideSystemUI().hideSystemUI(decorView);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,19 @@ String password;
         createButton=findViewById(R.id.buttonCreate);
 
         final Intent goLogin = new Intent(NewAccount.this, LoginPage.class);
+
+        //To set the System UI Visibility
+        decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(hsUI);
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+            @Override
+            public void onSystemUiVisibilityChange(int visibility) {
+                if(visibility == 0){
+                    Log.v(TAG, "Hiding the System UI");
+                    decorView.setSystemUiVisibility(hsUI);
+                }
+            }
+        });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,5 +75,16 @@ String password;
 
 
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }
