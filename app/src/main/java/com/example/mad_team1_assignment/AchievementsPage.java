@@ -80,4 +80,9 @@ public class AchievementsPage extends AppCompatActivity {
         super.onStop();
         finish();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

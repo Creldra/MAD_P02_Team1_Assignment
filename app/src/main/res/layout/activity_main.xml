@@ -58,18 +58,19 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
+        android:layout_width="378dp"
+        android:layout_height="81dp"
         android:text="MythicaLand"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="40dp"
+        android:textSize="45dp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.278" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         android:id="@+id/achievement_backButton"
         android:layout_width="139dp"
         android:layout_height="51dp"
+        android:soundEffectsEnabled="false"
         android:text="Back"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
