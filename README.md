@@ -18,8 +18,8 @@ Clicking on Next will show the next line of Text
 <br />Clicking on Menu will prompt for confirmation whether to go back to Main Menu or not
 <br />  By pressing yes, the game will end and close 
 <br />  By pressing no, the game will continue normally
-![Story Page](/images/04.PNG)
+![Story Page](/images/03.PNG)
 
-![Game Page](/images/03.PNG)
+![Game Page](/images/04.PNG)
 
 ![Game End Page](/images/05.PNG)
