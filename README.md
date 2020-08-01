@@ -1,7 +1,7 @@
 # MAD_P02_Team1_Assignment
 Mobile Application Development P02 Team 1 Assignment
 
-Main Menu contains 3 button, Start, Option and Exit.
+Main Menu contains 4 button, Start, Option, Achievement and Exit.
 
 ![Main Menu](/images/01.PNG)
 
