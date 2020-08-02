@@ -56,8 +56,9 @@
         android:text="Clear"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/achievement_backButton"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="18dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
