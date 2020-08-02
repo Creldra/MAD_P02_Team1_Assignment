@@ -7,9 +7,21 @@
     tools:context=".ParentalPage"
     android:background="@drawable/bg_forest">
 
+    <TextView
+        android:id="@+id/bg_PieChart"
+        android:layout_width="428dp"
+        android:layout_height="285dp"
+        android:background="#60000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.341" />
+
     <com.razerdp.widget.animatedpieview.AnimatedPieView
         android:id="@+id/animatedPieView"
-        android:layout_width="339dp"
+        android:layout_width="429dp"
         android:layout_height="285dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

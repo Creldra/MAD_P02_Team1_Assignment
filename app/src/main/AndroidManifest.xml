@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_mc_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="mad.team1.assignment.AchievementsPage"></activity>
+        <activity
+            android:name=".AchievementsPage"
+            android:screenOrientation="sensorLandscape"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".NewAccount"
             android:screenOrientation="sensorLandscape"

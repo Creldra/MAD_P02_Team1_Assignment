@@ -1,11 +1,7 @@
 package com.example.mad_team1_assignment;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,9 +16,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.example.mad_team1_assignment.R.layout.activity_achievements_page;
-
 public class AchievementsPage extends AppCompatActivity {
+
+    private final String TAG = "AchievementsPage: ";
     private View decorView;
     private Button backButton;
     private Button ClearButton;
@@ -36,8 +32,7 @@ public class AchievementsPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_achievements_page);
-
+        setContentView(R.layout.activity_achievements_page);
         //To set the System UI Visibility
         decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(hsUI);
@@ -49,16 +44,19 @@ public class AchievementsPage extends AppCompatActivity {
                 }
             }
         });
+        Log.v(TAG,"Testing Hide System UI");
 
         awardList = findViewById(R.id.awardList);
         awards = new ArrayList<String>(Arrays.asList(startingList));
         ad = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,awards);
         awardList.setAdapter(ad);
+        Log.v(TAG,"Set Variables for Achievements");
 
         //Retreiving data from Shared Preferences
         SharedPreferences pref = getApplicationContext().getSharedPreferences("AwardsPref", 0);
         awards.add(pref.getString("Achievement1","locked"));
         awards.add(pref.getString("Achievement2","locked"));
+        Log.v(TAG,"Retrieving Data from Shared Preferences");
 
         backButton = findViewById(R.id.achievement_backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +66,7 @@ public class AchievementsPage extends AppCompatActivity {
                 startActivity(goMainMenu);
             }
         });
+        Log.v(TAG,"Create Back Button");
 
         //to clear the achivements done by the user
         ClearButton = findViewById(R.id.ClearButton);
@@ -83,6 +82,7 @@ public class AchievementsPage extends AppCompatActivity {
                 Toast.makeText(AchievementsPage.this,"Cleared all achievements",Toast.LENGTH_LONG).show();
             }
         });
+        Log.v(TAG,"Clear button to clear all the achievements");
     }
 
 

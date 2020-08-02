@@ -90,11 +90,11 @@ public class ParentalPage extends AppCompatActivity {
         AnimatedPieView mAnimatedPieView = findViewById(R.id.animatedPieView);
         AnimatedPieViewConfig config = new AnimatedPieViewConfig();
         config.startAngle(-90)// Starting angle offset
-                .addData(new SimplePieInfo(valueone, Color.parseColor("#FFC5FF8C") , "Number Of Correct Answers: "+valueone))//Data (bean that implements the IPieInfo interface)
-                .addData(new SimplePieInfo(valuetwo, Color.parseColor("#FFFFD28C") , "Number Of Wrong Answers: "+ valuetwo)).drawText(true)
+                .addData(new SimplePieInfo(valueone, Color.parseColor("#FFC5FF8C") , "Correct Answers: "+valueone))//Data (bean that implements the IPieInfo interface)
+                .addData(new SimplePieInfo(valuetwo, Color.parseColor("#FFFFD28C") , "Wrong Answers: "+ valuetwo)).drawText(true)
                 .duration(2000).textSize(40);// draw pie animation duration
 
-// The following two sentences can be replace directly 'mAnimatedPieView.start (config); '
+        // The following two sentences can be replace directly 'mAnimatedPieView.start (config); '
         mAnimatedPieView.applyConfig(config);
         mAnimatedPieView.start();
     }
