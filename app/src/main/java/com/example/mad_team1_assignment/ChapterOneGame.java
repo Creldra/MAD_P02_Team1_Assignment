@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -100,11 +101,20 @@ public class ChapterOneGame extends AppCompatActivity {
                         //achievement 1: completed first chapter
                         String Achievement1="Completed your first chapter";
                         Toast.makeText(ChapterOneGame.this,Achievement1,Toast.LENGTH_LONG).show();
-                        Intent intent1 = new Intent(ChapterOneGame.this, AchievementsPage.class);
-                        intent1.putExtra("Achievement", Achievement1);
-                        startActivity(intent1);
+                        SharedPreferences pref1 = getApplicationContext().getSharedPreferences("AwardsPref", 0);
+                        SharedPreferences.Editor editor1 = pref1.edit();
+                        editor1.putString("Achievement1",Achievement1);
+                        editor1.apply();
 
-
+                        //achievement 2: Perfect score for chapter 1
+                        if(score==6){
+                            String Achievement2="Got a Perfect Score for Chapter 1";
+                            Toast.makeText(ChapterOneGame.this,Achievement2,Toast.LENGTH_LONG).show();
+                            SharedPreferences pref2 = getApplicationContext().getSharedPreferences("AwardsPref", 0);
+                            SharedPreferences.Editor editor2 = pref2.edit();
+                            editor2.putString("Achievement2",Achievement2);
+                            editor2.apply();
+                        }
                         Intent intent = new Intent(ChapterOneGame.this, EndGamePage.class);
                         intent.putExtra("score", score);
                         startActivity(intent);
