@@ -17,7 +17,10 @@ public class EndGamePage extends AppCompatActivity {
     TextView txt_Score;
     private View decorView;
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
-
+    int totalScore;
+    int prevtotal;
+    int attempts;
+    int prevattempts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +32,21 @@ public class EndGamePage extends AppCompatActivity {
         Intent receivingIntent = getIntent();
         int score = receivingIntent.getIntExtra("score", 0);
 
-        //saving latest score to shared preferences
+
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
+
+        //recording attempt number
+        prevattempts=pref.getInt("Attempts",0);
+        attempts= prevattempts+1;
+        editor.putInt("Attempts",attempts);
+        //pulling previous scores
+        prevtotal=pref.getInt("TotalScore",0);
+        totalScore= score +prevtotal;
+        editor.putInt("TotalScore",totalScore);
+
+        //saving latest score to shared preferences
+
         editor.putInt("Score",score);
         editor.apply();
 

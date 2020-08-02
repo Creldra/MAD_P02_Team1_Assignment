@@ -10,6 +10,7 @@ import android.service.autofill.UserData;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +23,14 @@ public class ParentalPage extends AppCompatActivity {
     int valueone;
     int valuetwo;
     int score;
+    int attempts;
     Button backButton;
     private View decorView;
     int hsUI = new HideSystemUI().hideSystemUI(decorView);
+    TextView TextNoAttempts;
+    int totalScore;
+    int totalRight;
+    int totalWrong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +49,7 @@ public class ParentalPage extends AppCompatActivity {
                 }
             }
         });
-
+        TextNoAttempts=findViewById(R.id.textViewAttempts);
         backButton = findViewById(R.id.backbutton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +61,12 @@ public class ParentalPage extends AppCompatActivity {
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         score=pref.getInt("Score",999);
+        attempts=pref.getInt("Attempts",0);
+        totalScore=pref.getInt("TotalScore",0);
+
+        TextNoAttempts.setText("Total Number Of Attempts:"+attempts);
+
+
 
 
 
@@ -64,7 +76,11 @@ public class ParentalPage extends AppCompatActivity {
 
         valueone=score;
         valuetwo=6-score;
+
+        totalRight=totalScore;
+        totalWrong= (6* attempts)-totalScore;
         drawPie();
+        drawPieTotal();
         }
 
         else{
@@ -92,6 +108,19 @@ public class ParentalPage extends AppCompatActivity {
         config.startAngle(-90)// Starting angle offset
                 .addData(new SimplePieInfo(valueone, Color.parseColor("#FFC5FF8C") , "Correct Answers: "+valueone))//Data (bean that implements the IPieInfo interface)
                 .addData(new SimplePieInfo(valuetwo, Color.parseColor("#FFFFD28C") , "Wrong Answers: "+ valuetwo)).drawText(true)
+                .duration(2000).textSize(40);// draw pie animation duration
+
+        // The following two sentences can be replace directly 'mAnimatedPieView.start (config); '
+        mAnimatedPieView.applyConfig(config);
+        mAnimatedPieView.start();
+    }
+    public void drawPieTotal()
+    {
+        AnimatedPieView mAnimatedPieView = findViewById(R.id.animatedPieView2);
+        AnimatedPieViewConfig config = new AnimatedPieViewConfig();
+        config.startAngle(-90)// Starting angle offset
+                .addData(new SimplePieInfo(10, Color.parseColor("#4ed3ed") , "Correct Answers:"+totalRight))//Data (bean that implements the IPieInfo interface)
+                .addData(new SimplePieInfo(valuetwo, Color.parseColor("#ff0037") , "Wrong Answers: "+ totalWrong)).drawText(true)
                 .duration(2000).textSize(40);// draw pie animation duration
 
         // The following two sentences can be replace directly 'mAnimatedPieView.start (config); '
