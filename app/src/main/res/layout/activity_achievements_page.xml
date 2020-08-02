@@ -35,5 +35,15 @@
         app:layout_constraintVertical_bias="0.549"
         tools:ignore="MissingConstraints"/>
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="170dp"
+        android:layout_height="49dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Achievements"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="53dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
