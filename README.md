@@ -2,7 +2,7 @@
 Mobile Application Development P02 Team 1 Assignment
 
 Splash Screen viewed upon launching the app
-![Splash_Screen](/images/06.PNG)
+![Splash_Screen](/images/06.png)
 
 Main Menu contains 4 button, Start, Option, Achievement and Exit.
 <br />Clicking on Start will bring user to Chapter Page.
@@ -33,19 +33,19 @@ Clicking on Clear button will bring clear the achievements made by the user.
 
 Clicking on Parental Controls will bring user to the parental controls login page.
 <br />Clicking on Back will bring the user back to Main Menu
-![Option_Page](/images/12.PNG)
+![Option_Page](/images/12.png)
 
 By typing in the Password and clicking Login would allow the user to login to the parental controls if the password is a matched
 <br />Clicking Back will bring the User to the Option Page
 <br />Clicking Create Password will bring user to New Account Page to create a new account.
-![Parental_Controls_Login](/images/09.PNG)
+![Parental_Controls_Login](/images/09.png)
 
 By typing a new password and clicking on Create New Account would overwrite the password previously stored in the shared preferences
 <br />Clicking on Back will bring user back to the parental controls login page.
-![Parental_Controls_Login](/images/10.PNG)
+![Parental_Controls_Login](/images/10.png)
 
 
 Clicking on Back will bring the user back to Option Page
 This page view Data like latest play-through's stats and total play-through stats and shown below
-![Parental_Controls_Login](/images/11.PNG)
+![Parental_Controls_Login](/images/11.png)
 
