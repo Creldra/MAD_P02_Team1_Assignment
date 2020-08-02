@@ -25,23 +25,15 @@
 
     <ListView
         android:id="@+id/awardList"
-        android:layout_width="699dp"
-        android:layout_height="280dp"
+        android:layout_width="715dp"
+        android:layout_height="304dp"
+        android:background="#80FFFFFF  "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/achievement_backButton"
-        app:layout_constraintVertical_bias="0.464"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/backgroundSetter"
-            android:layout_width="597dp"
-            android:layout_height="315dp"
-            android:background="#70000000"
-            android:textColor="#000000" />
-    </ListView>
+        app:layout_constraintVertical_bias="0.549"
+        tools:ignore="MissingConstraints"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -96,6 +97,14 @@ public class ChapterOneGame extends AppCompatActivity {
 
                     //Checks if last question
                     if(qns_setter[0] == questionList.length - 1){
+                        //achievement 1: completed first chapter
+                        String Achievement1="Completed your first chapter";
+                        Toast.makeText(ChapterOneGame.this,Achievement1,Toast.LENGTH_LONG).show();
+                        Intent intent1 = new Intent(ChapterOneGame.this, AchievementsPage.class);
+                        intent1.putExtra("Achievement", Achievement1);
+                        startActivity(intent1);
+
+
                         Intent intent = new Intent(ChapterOneGame.this, EndGamePage.class);
                         intent.putExtra("score", score);
                         startActivity(intent);
