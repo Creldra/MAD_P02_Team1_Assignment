@@ -1,10 +1,18 @@
 # MAD_P02_Team1_Assignment
 Mobile Application Development P02 Team 1 Assignment
 
+Splash Screen viewed upon launching the app
+![Splash_Screen](/images/06.PNG)
+
 Main Menu contains 4 button, Start, Option, Achievement and Exit.
 <br />Clicking on Start will bring user to Chapter Page.
 <br />Clicking on Option will bring user to Option Page.
+
 <br />Clicking on Achievement will bring user to Achievement Page.
+![Achievement_Page](/images/07.PNG)
+<br />Clicking on Clear button will bring clear the achievements made by the user.
+![Achievement_Page](/images/08.PNG)
+
 <br />Clicking on the Exit button in the Main Menu will prompt for confirmation whether to exit the game or not.
 ![Main Menu](/images/01.PNG)
 
