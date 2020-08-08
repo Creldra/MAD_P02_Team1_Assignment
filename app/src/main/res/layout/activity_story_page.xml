@@ -12,36 +12,35 @@
         android:id="@+id/txt_DialogBG"
         android:layout_width="570dp"
         android:layout_height="150dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="#79FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/m_Character"
         android:layout_width="172dp"
         android:layout_height="200dp"
+        android:layout_marginEnd="544dp"
         android:contentDescription="placeholderimage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_DialogBG"
+        app:layout_constraintEnd_toEndOf="@+id/txt_DialogBG"
+        app:layout_constraintTop_toTopOf="@+id/txt_DialogBG"
+        app:layout_constraintVertical_bias="0.72"
         app:srcCompat="@drawable/mc_1" />
 
     <ImageView
         android:id="@+id/s_Character"
         android:layout_width="194dp"
         android:layout_height="215dp"
+        android:layout_marginBottom="12dp"
         android:contentDescription="placeholderimage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintBottom_toTopOf="@+id/Dialogue"
+        app:layout_constraintEnd_toEndOf="@+id/txt_DialogBG"
+        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintStart_toStartOf="@+id/txt_DialogBG" />
 
     <TextView
         android:id="@+id/Dialogue"
@@ -50,40 +49,34 @@
         android:text="insert_dialogue_here"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintBottom_toBottomOf="@+id/txt_DialogBG"
+        app:layout_constraintEnd_toEndOf="@+id/txt_DialogBG"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="@+id/txt_DialogBG"
+        app:layout_constraintTop_toTopOf="@+id/txt_DialogBG"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/NextButton"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:layout_marginTop="244dp"
         android:background="#808080"
         android:text="Next"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/txt_DialogBG"
+        app:layout_constraintTop_toTopOf="@+id/txt_DialogBG" />
 
     <Button
         android:id="@+id/Menubutton"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:layout_marginTop="344dp"
         android:background="#808080"
         android:soundEffectsEnabled="false"
         android:text="Menu"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/txt_DialogBG"
+        app:layout_constraintEnd_toEndOf="@+id/txt_DialogBG" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -46,7 +46,6 @@ public class EndGamePage extends AppCompatActivity {
         editor.putInt("TotalScore",totalScore);
 
         //saving latest score to shared preferences
-
         editor.putInt("Score",score);
         editor.apply();
 
